@@ -1,8 +1,6 @@
 import {
   ButtonInteraction,
   CommandInteraction,
-  MessageActionRow,
-  MessageButton,
   version as djsVersion,
 } from 'discord.js';
 import { SlashCommandBuilder } from '@discordjs/builders';

@@ -1,5 +1,5 @@
 import { Commands } from './commands';
-import { CacheType, Client, Intents, Interaction } from 'discord.js';
+import { CacheType, Client, Interaction } from 'discord.js';
 import { EventEmitter } from 'events';
 import * as Dotenv from 'dotenv';
 import { Logger } from '@/utils';
@@ -17,7 +17,7 @@ function Main() {
     }
 
     const botClient = new Client({
-      intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MEMBERS],
+      intents: ["GuildMembers","GuildMessages","GuildPresences","GuildEmojisAndStickers","MessageContent","MessageContent"],
       ws: {
         properties: {
           $browser: 'Discord iOS',
@@ -63,7 +63,7 @@ async function InteractionHandler(interaction: Interaction<CacheType>) {
   } catch (err) {
     if (err) {
       Logger.error(
-        `An error occurred while handling an interaction. See error below.\n${err}`,
+        `An error occurred while handling an interaction. See error below.\n${err}\n\n${(err as Error).stack}`,
       );
     } else {
       Logger.error(
