@@ -1,14 +1,8 @@
 import { REST } from '@discordjs/rest';
 import { Routes } from 'discord-api-types/v10';
 import * as DotEnv from 'dotenv';
-import Commands from '@/commands';
+import { Commands } from '@/commands';
 import type { Command } from '@/commands';
-import {
-  Client,
-  Intents,
-  Collection,
-  ApplicationCommandPermissionData,
-} from 'discord.js';
 import { Logger } from '@/utils';
 
 DotEnv.config();
